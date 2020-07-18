@@ -18,6 +18,7 @@ public class EmployeeWage {
 		System.out.println("Welcome to Employee Wage Program");
 		while(totalWorkingHrs <= 100 && totalWorkingDays <= 20)
 		{
+			totalWorkingDays++;
 			int empCheck = (int)Math.floor(Math.random() * 10)%3;
 			switch (empCheck)
 			{
@@ -31,8 +32,9 @@ public class EmployeeWage {
 					empHrs=8;
 					break;
 			}
-			++totalWorkingDays;
+			
 			totalWorkingHrs+=empHrs;
+			System.out.println("Days: " +totalWorkingDays+ "Employees hrs: "+empHrs);
 		}
 		totalWage=totalWorkingHrs*WAGE_PER_HOUR;
 		System.out.println("Total wage of employee:"+totalWage);
