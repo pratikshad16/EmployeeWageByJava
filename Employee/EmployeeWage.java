@@ -17,6 +17,8 @@ class computeEmployeeWage {
 		  @SuppressWarnings("static-access")
 		  public static HashMap<Integer, Integer> companyWage = new HashMap<Integer, Integer>();
 	      public static ArrayList<Integer> wagePerCompany = new ArrayList <Integer>();
+		  public static ArrayList<Integer> Company1 = new ArrayList <Integer>();
+	      //public static ArrayList<Integer> Company2 = new ArrayList <Integer>();
 		@SuppressWarnings("static-access")
 		computeEmployeeWage(String company,int WAGE_PER_HOUR,int MAX_HR_IN_MONTH,int NUM_OF_WORKING_DAYS)
 		 {
@@ -95,9 +97,9 @@ class computeEmployeeWage {
 public class EmployeeWage {
 	
 	public static void main(String[] args) {
-		computeEmployeeWage company1 = new computeEmployeeWage("DMart", 20, 110, 26);
+		computeEmployeeWage company1 = new computeEmployeeWage("DMart", 20, 100, 25);
 		company1.dailyWageAndMonthlyWage();
-		computeEmployeeWage company2 = new computeEmployeeWage("Reliance", 24, 135, 20);
+		computeEmployeeWage company2 = new computeEmployeeWage("Reliance", 15, 120, 30);
 		company2.dailyWageAndMonthlyWage();
 		company2.printWage();
 	}
