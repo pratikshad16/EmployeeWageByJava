@@ -1,4 +1,6 @@
-
+//import java.util.HashMap;
+//import java.util.Map;
+import java.util.*;
 public class EmployeeWage {
 
 		public static final int IS_ABSENT = 0;
@@ -20,7 +22,7 @@ public class EmployeeWage {
 			  this.MAX_HR_IN_MONTH=MAX_HR_IN_MONTH;
 			  this.NUM_OF_WORKING_DAYS=NUM_OF_WORKING_DAYS;
 		 }
-		  public static void monthlyWage()
+		  public static int monthlyWage()
 		  {
 			 int empHrs=0;
 			 int empWage=0;
@@ -52,17 +54,21 @@ public class EmployeeWage {
 			totalWage+=empWage;
 		}
 		System.out.println("Monthly wage of employee of "+company+" is:"+totalWage);
+		return totalWage;
 		
 	}
 		@SuppressWarnings("static-access")
 		public static void main(String[] args) {
+			Map<String, Integer> company=new HashMap<>();
 			EmployeeWage company1 = new EmployeeWage("DMart", 20, 7, 100, 25);
-			company1.monthlyWage();
+			company.put("DMart",company1.monthlyWage());
 			EmployeeWage company2 = new EmployeeWage("Reliance", 15, 8, 120, 30);
-			company2.monthlyWage();
+			company.put("Reliance",company2.monthlyWage());
 			EmployeeWage company3 = new EmployeeWage("Big basket", 25, 9, 130, 35);
-			company3.monthlyWage();
-		
+			company.put("Big basket",company3.monthlyWage());
+			System.out.println("DMart : "+company.get("DMart"));
+			System.out.println("Reliance : "+company.get("Reliance"));
+			System.out.println("Big basket : "+company.get("Big basket"));
 		}
 }
 
